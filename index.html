@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT: your name and job title for the browser tab and Google -->
+<title>Your Name – Designer</title>
+<meta name="description" content="Portfolio of Your Name, designer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF0F3;
+    --ink: #1B1F2A;
+    --muted: #5B6272;
+    --line: #C9CED8;
+    --accent: #2F4BFF;
+    --block: #DDE1E8;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  nav { display: flex; gap: 24px; justify-content: flex-end; padding: 20px 0; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--accent); }
+
+  .hero { padding: 56px 0 72px; }
+  .hero h1 {
+    font-size: clamp(2.75rem, 9vw, 6.5rem);
+    line-height: 0.98;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 24px;
+  }
+  .hero p { max-width: 34em; font-size: 1.25rem; color: var(--muted); margin: 0 0 28px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 12px 20px; border-radius: 6px;
+    background: var(--accent); color: #fff; text-decoration: none; font-weight: 700;
+  }
+  .btn.alt { background: transparent; color: var(--ink); border: 2px solid var(--ink); padding: 10px 18px; }
+  .btn:hover { filter: brightness(1.1); }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 2rem; letter-spacing: -0.02em; margin: 0 0 32px; }
+
+  /* Work grid: each project is a <figure>. Copy one block to add a project. */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
+  figure { margin: 0; }
+  figure a { display: block; text-decoration: none; color: inherit; }
+  .thumb { aspect-ratio: 4 / 3; background: var(--block); overflow: hidden; border-radius: 4px; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s; }
+  figure a:hover img { transform: scale(1.03); }
+  figcaption { padding-top: 12px; }
+  figcaption strong { display: block; font-size: 1.125rem; }
+  figcaption span { color: var(--muted); font-size: 0.95rem; }
+  .feature { grid-column: 1 / -1; }
+  .feature .thumb { aspect-ratio: 16 / 9; }
+
+  .about { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; }
+  .about p { max-width: 38em; margin: 0 0 1em; }
+  ul.plain { list-style: none; padding: 0; margin: 0; }
+  ul.plain li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+
+  .job { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .job:first-of-type { padding-top: 0; }
+  .job .when { color: var(--muted); }
+  .job h3 { margin: 0 0 4px; font-size: 1.125rem; }
+  .job p { margin: 0; color: var(--muted); }
+
+  .contact a.big { font-size: clamp(1.5rem, 5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.9rem; }
+
+  @media (max-width: 700px) {
+    .about { grid-template-columns: 1fr; gap: 28px; }
+    .job { grid-template-columns: 1fr; gap: 4px; }
+    nav { justify-content: flex-start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .thumb img { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <!-- EDIT: your name, a one-sentence intro, and your links -->
+    <h1>Your Name</h1>
+    <p>I'm a graphic designer who makes brand identities and posters for small businesses. I'm looking for a junior designer role.</p>
+    <div class="links">
+      <a class="btn" href="mailto:you@example.com">Email me</a>
+      <!-- EDIT: upload your resume PDF to the repo, then match the file name here -->
+      <a class="btn alt" href="resume.pdf">Download resume</a>
+      <a class="btn alt" href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="work">
+    <h2>Work</h2>
+    <div class="grid">
+
+      <!-- Project 1 (large). EDIT: image path, link, title, short description.
+           The link can go to a bigger image, a PDF, a Behance page, or another page on your site. -->
+      <figure class="feature">
+        <a href="images/project-1.jpg">
+          <div class="thumb"><img src="images/project-1.jpg" alt="Describe this design for screen readers" loading="lazy"></div>
+          <figcaption><strong>Project title</strong><span>Brand identity for a coffee shop. Logo, packaging, signage.</span></figcaption>
+        </a>
+      </figure>
+
+      <!-- Project 2. To add more, copy a whole <figure> block and paste it below. -->
+      <figure>
+        <a href="images/project-2.jpg">
+          <div class="thumb"><img src="images/project-2.jpg" alt="Describe this design" loading="lazy"></div>
+          <figcaption><strong>Project title</strong><span>One line on what it is and your role.</span></figcaption>
+        </a>
+      </figure>
+
+      <figure>
+        <a href="images/project-3.jpg">
+          <div class="thumb"><img src="images/project-3.jpg" alt="Describe this design" loading="lazy"></div>
+          <figcaption><strong>Project title</strong><span>One line on what it is and your role.</span></figcaption>
+        </a>
+      </figure>
+
+      <figure>
+        <a href="images/project-4.jpg">
+          <div class="thumb"><img src="images/project-4.jpg" alt="Describe this design" loading="lazy"></div>
+          <figcaption><strong>Project title</strong><span>One line on what it is and your role.</span></figcaption>
+        </a>
+      </figure>
+
+      <figure>
+        <a href="images/project-5.jpg">
+          <div class="thumb"><img src="images/project-5.jpg" alt="Describe this design" loading="lazy"></div>
+          <figcaption><strong>Project title</strong><span>One line on what it is and your role.</span></figcaption>
+        </a>
+      </figure>
+
+      <figure>
+        <a href="images/project-6.jpg">
+          <div class="thumb"><img src="images/project-6.jpg" alt="Describe this design" loading="lazy"></div>
+          <figcaption><strong>Project title</strong><span>One line on what it is and your role.</span></figcaption>
+        </a>
+      </figure>
+
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <!-- EDIT: 2 short paragraphs about you and what you want to do -->
+        <p>Write two or three sentences about who you are, what you like designing, and what kind of team you want to join.</p>
+        <p>Add one more sentence about how you work, for example how you take feedback or how you handle deadlines.</p>
+      </div>
+      <div>
+        <!-- EDIT: your tools and skills -->
+        <ul class="plain">
+          <li>Adobe Photoshop</li>
+          <li>Adobe Illustrator</li>
+          <li>Figma</li>
+          <li>Typography and layout</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <!-- EDIT: jobs, internships, school, or projects. Copy a .job block to add more. -->
+    <div class="job">
+      <div class="when">2025 – Present</div>
+      <div><h3>Job title, Company</h3><p>One sentence on what you did and any result you can point to.</p></div>
+    </div>
+    <div class="job">
+      <div class="when">2023 – 2025</div>
+      <div><h3>Degree or program, School</h3><p>Anything relevant: major, awards, key projects.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Open to full-time roles and freelance projects.</p>
+    <a class="big" href="mailto:you@example.com">you@example.com</a>
+  </section>
+
+  <footer>© 2026 Your Name</footer>
+
+</div>
+</body>
+</html>
